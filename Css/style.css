@@ -1,0 +1,78 @@
+body {
+  height: 100%;
+  margin: 0;
+  position: relative;
+  background: url("../images/ac_bg.jpg") no-repeat center center;
+  background-size: cover;
+  transition: margin-left 0.3s ease;
+}
+
+.content {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.sidebar {
+  width: 80px;
+  background-color: #700000;
+  color: white;
+  position: fixed;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+.navbar {
+  background-color: black;
+  position: relative;
+  top: 0;
+  width: calc(100% - 80px);
+  color: white;
+  display: flex;
+  align-items: center;
+  left: 80px;
+  padding: 20px;
+  z-index: 3;
+  transition: left 0.3s ease;
+}
+
+.sidebar_icon {
+  position: absolute;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icons {
+  margin-top: 50px;
+}
+
+.icons .icon {
+  margin-bottom: 20px;
+}
+
+.sidebar-close {
+  left: 0;
+  width: 100%;
+}
